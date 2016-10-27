@@ -1,0 +1,38 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      k;
+}
+
+dimensions      [ 0 2 -2 0 0 0 0 ];
+
+internalField   uniform 1;
+
+boundaryField
+{
+	Walls{
+	type compressible::kqRWallFunction;
+	value uniform 1;
+	}
+	
+	Geo
+	{
+	type compressible::kqRWallFunction;
+	value uniform 1;
+	}
+
+	the_Inlet{
+	type turbulentIntensityKineticEnergyInlet;
+	intensity 0.02;
+	value	  uniform 1;
+	}
+	
+	the_Outlet{
+	type inletOutlet;
+	inletValue uniform 1;
+	value	   uniform 1;
+	}
+}

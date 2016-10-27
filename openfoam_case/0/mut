@@ -1,0 +1,43 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      mut;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 1 -1 -1 0 0 0 0 ];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    Walls
+    {
+        type            mutkWallFunction;
+        value           uniform 0;
+    }
+
+    Geo
+    {
+        type            mutkWallFunction;
+        value           uniform 0;
+    }
+
+    the_Inlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+
+    the_Outlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //

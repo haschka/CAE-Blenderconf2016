@@ -1,0 +1,33 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+
+dimensions [0 1 -1 0 0 0 0];
+
+internalField uniform (0 0 0);
+
+boundaryField
+{
+  Walls{
+    type fixedValue;
+    value uniform ( 0 0 0 );
+  }
+  the_Inlet{
+    type flowRateInletVelocity;
+    volumetricFlowRate 5550; // 80 km/h wind
+    value uniform ( 0 5550 0 );
+  }
+  the_Outlet{
+    type inletOutlet;
+    value uniform ( 0 0 0 );
+    inletValue uniform (0 0 0);
+  }
+  Geo{
+    type fixedValue;
+    value uniform ( 0 0 0 );
+  }
+}

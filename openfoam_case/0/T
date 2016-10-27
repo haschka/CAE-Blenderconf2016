@@ -1,0 +1,33 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField uniform 293;
+
+boundaryField {
+
+the_Inlet {
+	  type fixedValue;
+	  value $internalField;
+	  }
+the_Outlet {
+	   type		inletOutlet;
+	   value        $internalField;
+           inletValue   $internalField;
+    }
+Walls	{
+	type fixedValue;
+	value $internalField;
+	}
+Geo	{
+	type fixedValue;
+	value $internalField;
+	}
+
+}
