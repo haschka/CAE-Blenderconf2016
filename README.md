@@ -1,6 +1,6 @@
 This repository contains the files corresponding to the CAE and Blender talk
 given at blenderconf 2016.
-
+https://www.youtube.com/watch?v=zyUqs5Aj17U
 
 All the files found within here are licensed under the zlib license
 
